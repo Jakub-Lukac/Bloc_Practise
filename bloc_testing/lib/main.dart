@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, unused_element
+
 import 'package:bloc_testing/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 
