@@ -114,6 +114,18 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             const SizedBox(height: 24),
+            // context.select() is replacement for buildWhen property
+            // however for more complex scenario it is recommended to use buildWhen inside BlocBuilder
+            // context.select checks if current state differs from previous one
+            // if yes then only then rebuilds the UI
+            Builder(
+              builder: (context) {
+                final counterValue =
+                    context.select((CounterCubit cubit) => cubit.state.counter);
+                return Text("Counter : $counterValue");
+              },
+            ),
+            const SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
